@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
   modules: [
     '@nuxtjs/tailwindcss',
+    'nuxt-icon',
     [
       '@nuxtjs/google-fonts',
       {
@@ -15,5 +16,10 @@ export default defineNuxtConfig({
         preload: true,
       },
     ],
+    [
+      '@nuxtjs/i18n',
+      {
+      }
+    ]
   ],
 })
