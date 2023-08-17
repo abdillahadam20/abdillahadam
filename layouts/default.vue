@@ -1,9 +1,17 @@
 <template>
-  <div class="font-poppins">
+  <div class="app">
+    <OrganismNavbar />
     <slot></slot>
+    <OrganismFooter />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
 
-<style scoped></style>
+</script>
+
+<style scoped lang="postcss">
+.app {
+  @apply min-h-screen w-full h-full bg-white;
+}
+</style>
