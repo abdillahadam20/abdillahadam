@@ -2,7 +2,7 @@
   <h1 class="title">{{ title }}</h1>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 defineProps({
   title: {
     type: String,
@@ -11,9 +11,8 @@ defineProps({
 })
 </script>
 
-<style scoped lang="postcss">
+<style scoped>
 .title {
-  @apply font-poppins text-xl md:text-3xl lg:text-5xl font-bold select-text text-slate-900;
+  @apply font-poppins select-text lg:text-4xl md:text-2xl text-base font-bold text-base-tasty-500;
 }
 </style>
-e

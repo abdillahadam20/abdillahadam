@@ -1,5 +1,5 @@
 <template>
-  <div>Ini footer</div>
+  <div>ini footer</div>
 </template>
 
 <script setup lang="ts"></script>
