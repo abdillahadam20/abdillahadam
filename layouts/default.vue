@@ -1,6 +1,8 @@
 <template>
   <div class="app">
-    <slot></slot>
+    <organism-navbar />
+    <slot />
+    <organism-footer />
   </div>
 </template>
 
