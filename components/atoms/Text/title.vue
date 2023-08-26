@@ -13,6 +13,6 @@ defineProps({
 
 <style scoped>
 .title {
-  @apply font-poppins select-text lg:text-4xl md:text-2xl text-base font-bold text-base-tasty-500;
+  @apply font-poppins select-text lg:text-4xl md:text-2xl text-base font-bold text-tasty-500;
 }
 </style>
