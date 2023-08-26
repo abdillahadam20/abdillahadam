@@ -19,7 +19,7 @@
   }
 
   p {
-    @apply font-bold font-poppins text-lg hover:text-base-tasty-500;
+    @apply hover:text-sunsetorange-100 font-bold font-poppins text-lg text-slate-800 hidden md:inline-flex;
   }
 }
 </style>

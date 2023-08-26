@@ -1,31 +1,40 @@
 <template>
   <nav class="nav">
     <div class="nav-container">
-      <nuxt-link to="/">
-        <AtomsLogo />
-      </nuxt-link>
-      <div class="flex md:order-2">
-        <button
-          type="button"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          @click="download"
-        >
-          Download CV
-        </button>
-      </div>
-      <div
-        id="navbar-sticky"
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-      >
-        <ul
-          class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white"
-        >
+      <div class="nav-container-collapse">
+        <div class="nav-container-collapse-logo">
+          <nuxt-link
+            to="/"
+            class="nav-container-collapse-logo-link"
+          >
+            <AtomsLogo />
+          </nuxt-link>
+        </div>
+        <ul class="nav-container-collapse-list">
           <MoleculesNavbarLink
             v-for="(item, index) in response.data"
             :key="index"
             :data="item"
           />
         </ul>
+        <div class="nav-container-collapse-button-download">
+          <button
+            class="hidden lg:inline-flex"
+            @click="download"
+          >
+            Download CV
+          </button>
+          <button
+            class="lg:hidden flex p-2 rounded-md"
+            @click="handleToggleSidebar"
+          >
+            <icon
+              name="heroicons:bars-3-bottom-left-20-solid"
+              class="w-8 h-8 text-sunsetorange-100"
+            />
+          </button>
+          <MoleculesNavbarSidebar v-model="isSidebarOpen" />
+        </div>
       </div>
     </div>
   </nav>
@@ -36,19 +45,38 @@ const { data: response } = await useFetch(`/api/navbar`)
 
 const download = () => {
   const link = document.createElement('a')
-  link.href = '~/assets/documents/CV-Adam-Abdillah.pdf'
+  link.href = 'assets/documents/CV-Adam-Abdillah.pdf'
   link.download = 'CV-Adam-Abdillah.pdf'
   link.target = '_blank'
   link.click()
+}
+
+const isSidebarOpen = ref(false)
+const handleToggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value
 }
 </script>
 
 <style scoped lang="postcss">
 .nav {
-  @apply bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200;
+  @apply bg-white shadow-md;
 
   &-container {
-    @apply max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4;
+    @apply max-w-7xl mx-auto p-4;
+
+    &-collapse {
+      @apply flex items-center justify-between;
+
+      &-logo {
+      }
+
+      &-list {
+        @apply hidden lg:flex justify-center items-center gap-4;
+      }
+
+      &-button-download {
+      }
+    }
   }
 }
 </style>
