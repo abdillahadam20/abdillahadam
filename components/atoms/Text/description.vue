@@ -1,5 +1,5 @@
 <template>
-  <p>{{ description }}</p>
+  <p class="description">{{ description }}</p>
 </template>
 
 <script setup lang="ts">
@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <style scoped lang="postcss">
-:deep(.section) {
-  @apply bg-base-tasty-200;
+.description {
+  @apply select-text font-poppins;
 }
 </style>

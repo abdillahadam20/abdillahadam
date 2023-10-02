@@ -8,6 +8,7 @@
       :to="data.href"
       class="nav-list-link"
     >
+
       <span class="nav-list-link-title">
         {{ data.title }}
       </span>

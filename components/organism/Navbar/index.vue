@@ -1,5 +1,9 @@
 <template>
-  <nav class="nav">
+  <nav
+    class="nav"
+    :class="scrolled ? 'scroll' : ''"
+    v-motion-pop-visible
+  >
     <div class="nav-container">
       <div class="nav-container-collapse">
         <div class="nav-container-collapse-logo">
@@ -41,6 +45,8 @@
 </template>
 
 <script setup lang="ts">
+import { useScroll } from '@/composables/useScroll'
+
 const { data: response } = await useFetch(`/api/navbar`)
 
 const download = () => {
@@ -52,14 +58,21 @@ const download = () => {
 }
 
 const isSidebarOpen = ref(false)
+
 const handleToggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value
 }
+
+const { scrolled } = useScroll()
 </script>
 
 <style scoped lang="postcss">
+.scroll {
+  @apply shadow-md transition-all ease-in-out duration-100;
+}
+
 .nav {
-  @apply bg-white shadow-md;
+  @apply bg-white top-0 fixed w-full z-10;
 
   &-container {
     @apply max-w-7xl mx-auto p-4;
