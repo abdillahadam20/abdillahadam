@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <OrganismNavbar />
     <slot />
   </div>
 </template>

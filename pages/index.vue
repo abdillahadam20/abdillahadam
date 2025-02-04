@@ -1,5 +1,6 @@
 <template>
-  <div>test</div>
+  <!-- <div>test</div> -->
+  <TemplatesHomepageHero />
 </template>
 
 <script setup lang="ts"></script>
