@@ -11,6 +11,6 @@ export default {};
 
 <style lang="postcss" scoped>
 .app {
-  @apply font-poppins;
+  @apply font-jbm;
 }
 </style>

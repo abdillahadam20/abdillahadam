@@ -13,6 +13,6 @@ defineProps({
 
 <style lang="postcss" scoped>
 .description {
-  @apply text-teal-500 font-semibold text-5xl;
+  @apply font-normal text-base;
 }
 </style>
