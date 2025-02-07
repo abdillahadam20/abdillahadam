@@ -1,6 +1,6 @@
 <template>
-  <!-- <div>test</div> -->
   <TemplatesHomepageHero />
+  <TemplatesHomepagePortofolio />
 </template>
 
 <script setup lang="ts"></script>

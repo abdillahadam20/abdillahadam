@@ -14,11 +14,15 @@ defineProps({
     type: String,
     default: "",
   },
+  classes: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 
 <style lang="postcss" scoped>
 .icons {
-  @apply shadow-md rounded-full bg-teal-500 w-10 h-10 flex text-white justify-center items-center;
+  @apply text-teal-500 hover:bg-teal-500 hover:text-white shadow-md rounded-full border-2 border-teal-500 w-10 h-10 flex transition-all ease-in-out duration-300 cursor-pointer justify-center items-center;
 }
 </style>
