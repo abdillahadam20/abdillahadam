@@ -1,6 +1,5 @@
 <template>
-  <TemplatesHero />
-  <!-- <TemplatesHomepagePortofolio /> -->
+  <TemplatesPortfolio />
 </template>
 
 <script setup lang="ts"></script>
