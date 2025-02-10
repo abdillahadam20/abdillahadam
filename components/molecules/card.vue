@@ -2,42 +2,39 @@
 defineProps({
   href: {
     type: String,
-    default: ''
+    default: "",
   },
   src: {
     type: String,
-    default: ''
+    default: "",
   },
   alt: {
     type: String,
-    default: ''
+    default: "",
   },
   title: {
     type: String,
-    default: ''
+    default: "",
   },
   description: {
     type: String,
-    default: ''
+    default: "",
   },
   icon: {
     type: String,
-    default: ''
-  }
-})
-
+    default: "",
+  },
+});
 </script>
 
 <template>
-  <NuxtLink :to="href" class="card">
-    <img class="card-img" :src="src" :alt="alt">
+  <NuxtLink :to="href" class="card" target="_blank">
+    <img class="card-img" :src="src" :alt="alt" />
     <div class="card-content">
       <h5>{{ title }}</h5>
-      <p>{{description}}</p>
+      <p>{{ description }}</p>
       <div class="card-icon">
         <slot />
-        <!-- <Icon name="logos:nuxt-icon" />
-        <Icon name="logos:tailwindcss-icon" /> -->
       </div>
     </div>
   </NuxtLink>
@@ -49,11 +46,11 @@ defineProps({
 }
 
 .card-img {
-  @apply object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg;
+  @apply object-cover w-full rounded-t-lg h-auto md:h-auto md:w-48 md:rounded-none md:rounded-s-lg;
 }
 
 .card-content {
-  @apply flex flex-col justify-between p-4 leading-normal truncate;
+  @apply flex flex-col justify-between p-4 leading-normal max-w-[24rem];
 }
 
 h5 {
@@ -61,7 +58,7 @@ h5 {
 }
 
 p {
-  @apply mb-3 font-normal text-gray-700 dark:text-gray-400;
+  @apply mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-4;
 }
 
 .card-icon {

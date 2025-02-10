@@ -11,23 +11,11 @@ import {
 import { ref } from "vue";
 
 const menu = [
-  { href: "#", title: "Home" },
-  { href: "#", title: "Portfolio" },
-  { href: "#", title: "Experience" },
+  { href: "/", title: "Home" },
+  { href: "/portfolio", title: "Portfolio" },
+  { href: "/experience", title: "Experience" },
   { href: "#", title: "Contact" },
 ];
-
-const isDarkMode = ref(false);
-
-const toggleMenu = () => {
-  isDarkMode.value = !isDarkMode.value;
-
-  if (isDarkMode.value) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-};
 </script>
 
 <template>
@@ -75,7 +63,11 @@ const toggleMenu = () => {
               <MoleculesToggleSwitch />
             </NavigationMenuItem>
             <NavigationMenuItem v-for="(item, index) in menu" :key="index">
-              <NavigationMenuLink href="#">{{ item.title }}</NavigationMenuLink>
+              <!-- {{ item }} -->
+              <NavigationMenuLink :href="item.href">{{
+                item.title
+              }}</NavigationMenuLink>
+              <!-- <NuxtLink :to="item.href">{{ item.title }}</NuxtLink> -->
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
