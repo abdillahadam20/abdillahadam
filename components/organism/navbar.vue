@@ -1,23 +1,3 @@
-<script setup lang="ts">
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { ref } from "vue";
-
-const menu = [
-  { href: "/", title: "Home" },
-  { href: "/portfolio", title: "Portfolio" },
-  { href: "/experience", title: "Experience" },
-  { href: "#", title: "Contact" },
-];
-</script>
-
 <template>
   <div class="bg-white border-gray-200 dark:bg-gray-900">
     <div
@@ -32,7 +12,9 @@ const menu = [
           >Abdillah</span
         >
       </a>
+      <!-- Tombol untuk membuka Sidebar -->
       <button
+        @click="toggleSidebar"
         data-collapse-toggle="navbar-default"
         type="button"
         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -63,54 +45,76 @@ const menu = [
               <MoleculesToggleSwitch />
             </NavigationMenuItem>
             <NavigationMenuItem v-for="(item, index) in menu" :key="index">
-              <!-- {{ item }} -->
               <NavigationMenuLink :href="item.href">{{
                 item.title
               }}</NavigationMenuLink>
-              <!-- <NuxtLink :to="item.href">{{ item.title }}</NuxtLink> -->
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
     </div>
   </div>
+
+  <!-- Menambahkan transition untuk smooth animation -->
+  <transition
+    name="sidebar-fade"
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @leave="leave"
+  >
+    <OrganismSidebar v-if="isSidebar" @closeSidebar="toggleSidebar" />
+  </transition>
 </template>
 
+<script setup lang="ts">
+import { ref } from "vue";
+
+const menu = [
+  { href: "/", title: "Home" },
+  { href: "/portfolio", title: "Portfolio" },
+  { href: "/experience", title: "Experience" },
+  { href: "#", title: "Contact" },
+];
+
+const isSidebar = ref(false);
+const emit = defineEmits();
+
+// Fungsi untuk toggle sidebar
+const toggleSidebar = () => {
+  isSidebar.value = !isSidebar.value;
+  emit("toggleSidebar", isSidebarOpen.value);
+};
+
+// Method untuk menambahkan animasi transisi
+const beforeEnter = (el: HTMLElement) => {
+  el.style.transition = "transform 0.3s ease-in-out, opacity 0.3s ease-in-out";
+  el.style.transform = "translateX(-100%)";
+  el.style.opacity = "0";
+};
+
+const enter = (el: HTMLElement) => {
+  el.offsetHeight; // Trigger reflow to enable transition
+  el.style.transition = "transform 0.3s ease-in-out, opacity 0.3s ease-in-out";
+  el.style.transform = "translateX(0)";
+  el.style.opacity = "1";
+};
+
+const leave = (el: HTMLElement) => {
+  el.style.transition = "transform 0.3s ease-in-out, opacity 0.3s ease-in-out";
+  el.style.transform = "translateX(-100%)";
+  el.style.opacity = "0";
+};
+</script>
+
 <style scoped>
-/* Transition for the icons (moon and sun) */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-in-out;
-  will-change: opacity;
+/* Transisi untuk fade dan slide sidebar */
+.sidebar-fade-enter-active,
+.sidebar-fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.sidebar-fade-enter, .sidebar-fade-leave-to /* .sidebar-fade-leave-active in <2.1.8 */ {
   opacity: 0;
-}
-
-/* Removed scale effect for smoother transition */
-.fade-enter-active {
-  animation: fadeIn 0.3s ease-in-out;
-}
-.fade-leave-active {
-  animation: fadeOut 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  transform: translateX(-100%);
 }
 </style>
