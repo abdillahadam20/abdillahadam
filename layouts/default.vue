@@ -13,11 +13,11 @@ const parallaxElement = ref(null);
 
 <style lang="postcss" scoped>
 .app {
-  @apply font-jbm dark:bg-gray-900 w-full h-screen bg-white overflow-hidden;
+  @apply font-jbm dark:bg-gray-900 w-full h-screen bg-white;
 }
 
 html,
 body {
-  @apply m-0 p-0 h-full w-full overflow-hidden;
+  @apply m-0 p-0 h-full w-full;
 }
 </style>

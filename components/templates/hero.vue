@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white relative h-full dark:bg-gray-900 bg-dots">
+  <section class="bg-white relative dark:bg-gray-900 bg-dots">
     <div
       class="hidden relative lg:flex flex-col gap-4 justify-center items-center"
     >

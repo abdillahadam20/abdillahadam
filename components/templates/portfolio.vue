@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white h-full py-16 dark:bg-gray-900">
+  <div class="bg-white py-16 dark:bg-gray-900">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-base/7 font-semibold text-teal-500">Portofolio</h2>
@@ -62,6 +62,28 @@ const porto = [
       { name: "logos:nuxt-icon" },
       { name: "simple-icons:shadcnui" },
     ],
+  },
+  {
+    href: "https://github.com/abdillahadam20/ecommerce-react-js",
+    src: "/static/ecommerce.png",
+    alt: "Mini E-Commerce",
+    title: "Mini E-Commerce",
+    description:
+      "Aplikasi frontend e-commerce sederhana menggunakan React.js untuk menampilkan produk, keranjang belanja, dan checkout.",
+    icon: [
+      { name: "logos:tailwindcss-icon" },
+      { name: "vscode-icons:file-type-reactjs" },
+      { name: "simple-icons:shadcnui" },
+    ],
+  },
+  {
+    href: "https://github.com/abdillahadam20/ecommerce-express-js",
+    src: "/static/ecommerce.png",
+    alt: "Mini E-Commerce",
+    title: "Mini E-Commerce",
+    description:
+      "Aplikasi e-commerce backend sederhana menggunakan Node.js dan Express untuk mengelola data produk.",
+    icon: [{ name: "skill-icons:expressjs-light" }, { name: "logos:mongodb" }],
   },
 ];
 </script>
