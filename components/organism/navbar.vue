@@ -73,7 +73,7 @@ const menu = [
   { href: "/", title: "Home" },
   { href: "/portfolio", title: "Portfolio" },
   { href: "/experience", title: "Experience" },
-  { href: "#", title: "Contact" },
+  { href: "https://api.whatsapp.com/send/?phone=628577686939&text&type=phone_number&app_absent=0", title: "Contact" },
 ];
 
 const isSidebar = ref(false);

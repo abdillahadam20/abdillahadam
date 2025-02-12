@@ -1,65 +1,39 @@
 <template>
   <section class="bg-white relative dark:bg-gray-900 bg-dots">
-    <div
-      class="hidden relative lg:flex flex-col gap-4 justify-center items-center"
-    >
+    <div class="hidden relative lg:flex flex-col gap-4 justify-center items-center">
       <NuxtImg class="absolute top-0 opacity-10" src="/static/bg-logo.png" />
     </div>
     <div
-      class="max-w-screen-xl px-4 py-2 lg:py-8 mx-auto flex justify-between gap-16 z-10 relative"
-    >
-      <div
-        class="flex justify-center items-start lg:items-center flex-col-reverse lg:flex-row gap-4"
-      >
+      class="max-w-screen-xl px-4 py-2 lg:py-8 mx-auto flex flex-col lg:flex-row justify-between gap-16 z-10 relative">
+      <div class="flex justify-center items-start lg:items-center flex-col-reverse lg:flex-row gap-4">
         <div class="flex lg:flex-col gap-4">
-          <MoleculesIcons
-            v-for="(item, index) in icons"
-            :key="index"
-            :icons="item.title"
-            sizes="24"
-          />
+          <NuxtLink :to="item.href" v-for="(item, index) in icons" :key="index" target="_blank">
+            <MoleculesIcons :icons="item.title" sizes="24" />
+          </NuxtLink>
         </div>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-4">
             <AtomsSubtitle title="Front End Developer" />
             <AtomsTitle title="Adam Abdillah" />
             <AtomsDescription
-              description="I specialize in turning creative design ideas into responsive, pixel-perfect code. From wireframes to the final product, I craft smooth and intuitive web experiences that perfectly align with the original vision."
-            />
+              description="I specialize in turning creative design ideas into responsive, pixel-perfect code. From wireframes to the final product, I craft smooth and intuitive web experiences that perfectly align with the original vision." />
           </div>
           <div>
-            <Button
-              variant="teal"
-              class="rounded-full"
-              @click="downloadCV"
-              :disabled="isLoading"
-            >
+            <Button variant="teal" class="rounded-full" @click="downloadCV" :disabled="isLoading">
               <template v-if="isLoading">
                 <!-- Loading Spinner -->
-                <Icon
-                  name="eos-icons:spinner"
-                  class="animate-spin text-white"
-                  size="20"
-                />
+                <Icon name="eos-icons:spinner" class="animate-spin text-white" size="20" />
               </template>
               <template v-else>
-                <Icon
-                  name="hugeicons:arrow-down-03"
-                  class="text-white"
-                  size="20"
-                />
+                <Icon name="hugeicons:arrow-down-03" class="text-white" size="20" />
                 Download CV
               </template>
             </Button>
           </div>
         </div>
       </div>
-      <div class="w-full hidden lg:flex">
-        <NuxtImg
-          src="/static/Adam-Abdillah.png"
-          class="w-full"
-          alt="Adam Abdillah"
-        />
+      <div class="w-full">
+        <NuxtImg src="/static/Adam-Abdillah.png" class="w-full" alt="Adam Abdillah" />
       </div>
     </div>
   </section>
@@ -67,9 +41,9 @@
 
 <script lang="ts" setup>
 const icons = [
-  { title: "hugeicons:linkedin-01" },
-  { title: "hugeicons:instagram" },
-  { title: "hugeicons:github" },
+  { title: "hugeicons:linkedin-01", href: 'https://www.linkedin.com/in/adam-abdillah/' },
+  { title: "hugeicons:instagram", href: 'https://www.instagram.com/adamabdillah20' },
+  { title: "hugeicons:github", href: 'https://github.com/abdillahadam20' },
 ];
 
 const isLoading = ref(false);
@@ -93,20 +67,16 @@ const downloadCV = () => {
 <style lang="postcss" scoped>
 /* Background dengan pola titik-titik */
 .bg-dots {
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.1) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(circle,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px);
   background-size: 20px 20px;
 }
 
 /* Dark mode */
 .dark .bg-dots {
-  background-image: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px);
 }
 </style>
