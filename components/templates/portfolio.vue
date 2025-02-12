@@ -69,7 +69,7 @@ const porto = [
     alt: "Mini E-Commerce",
     title: "Mini E-Commerce",
     description:
-      "Aplikasi frontend e-commerce sederhana menggunakan React.js untuk menampilkan produk, keranjang belanja, dan checkout.",
+      "Aplikasi frontend e-commerce sederhana menggunakan React.js untuk menampilkan produk, keranjang belanja, dan checkout. Berikut dengan backend sederhana menggunakan Node.js dan Express untuk mengelola data produk.",
     icon: [
       { name: "logos:tailwindcss-icon" },
       { name: "vscode-icons:file-type-reactjs" },
@@ -77,13 +77,13 @@ const porto = [
     ],
   },
   {
-    href: "https://github.com/abdillahadam20/ecommerce-express-js",
-    src: "/static/ecommerce.png",
-    alt: "Mini E-Commerce",
-    title: "Mini E-Commerce",
-    description:
-      "Aplikasi e-commerce backend sederhana menggunakan Node.js dan Express untuk mengelola data produk.",
-    icon: [{ name: "skill-icons:expressjs-light" }, { name: "logos:mongodb" }],
+    href: "https://privy.id/",
+    src: "/static/privy.png",
+    alt: "Privy Identitas Digital",
+    title: "Company Profile Privy",
+    description: "Website Company Profile yang dikerjakan ketika bekerja di Privy bersama team yang luar biasa.",
+    icon: [{ name: "logos:tailwindcss-icon" },
+      { name: "logos:nuxt-icon" },],
   },
 ];
 </script>
