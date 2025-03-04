@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router"; // Menggunakan Vue Router untuk mendeteksi rute
 
 // Deklarasi variabel reaktif untuk toggle sidebar
@@ -84,8 +84,11 @@ const toggleSidebar = () => {
 const menu = [
   { href: "/", title: "Home" },
   { href: "/portfolio", title: "Portfolio" },
-  { href: "/experience", title: "Experience" },
-  { href: "https://api.whatsapp.com/send/?phone=628577686939&text&type=phone_number&app_absent=0", title: "Contact" },
+  // { href: "/experience", title: "Experience" },
+  {
+    href: "https://api.whatsapp.com/send/?phone=628577686939&text&type=phone_number&app_absent=0",
+    title: "Contact",
+  },
 ];
 </script>
 
