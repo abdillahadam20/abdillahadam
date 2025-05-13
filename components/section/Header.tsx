@@ -4,6 +4,7 @@ import Sidebar from "@/components/base/Sidebar";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const menu = [
@@ -28,10 +29,10 @@ const Header = () => {
       <nav className="mt-4 relative max-w-7xl w-full bg-transparent backdrop-blur-md dark:bg-transparent border border-gray-200 rounded-full mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto  dark:border-neutral-700">
         <div className="px-4 md:px-0 flex justify-between items-center w-full">
           <div className="flex items-center">
-            <a
+            <Link
               className="flex-none rounded-md text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80"
-              href="https://preline.co/templates/personal/index.html"
-              aria-label="Preline"
+              href="/"
+              aria-label="Adam Abdillah"
             >
               <Image
                 src="/Logo-Adam-Abdillah.png"
@@ -39,7 +40,7 @@ const Header = () => {
                 width={40}
                 height={40}
               />
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4">

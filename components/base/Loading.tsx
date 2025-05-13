@@ -13,7 +13,7 @@ export default function LoadingScreen({
   const [progress, setProgress] = useState(0);
 
   // Total loading time in milliseconds (10 seconds)
-  const totalLoadingTime = 10000;
+  const totalLoadingTime = 3000;
   // Update interval in milliseconds (100ms)
   const updateInterval = 100;
   // Calculate how many steps we need
