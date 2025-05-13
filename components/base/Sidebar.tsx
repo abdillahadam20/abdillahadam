@@ -78,7 +78,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           </div>
           <ul className="flex-col gap-1 flex">
             <li>
-              <a href="/">
+              <Link href="/">
                 <div className="flex-col flex p-3 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                   <div className="h-5 gap-3 flex">
                     <svg
@@ -119,10 +119,10 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                     </h2>
                   </div>
                 </div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/project">
+              <Link href="/project">
                 <div className="flex-col gap-1 flex">
                   <div className="flex-col flex p-3 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                     <div className="h-5 gap-3 flex">
@@ -151,7 +151,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
