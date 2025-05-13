@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/base/Theme-Providers";
 import Footer from "@/components/section/Footer";
 import Header from "@/components/section/Header";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Funnel_Sans } from "next/font/google";
 import React from "react";
@@ -31,12 +32,13 @@ export default function RootLayout({
       <body className={funnelSans.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <Header />
           {children}
+          <Analytics />
           <Footer />
         </ThemeProvider>
       </body>
