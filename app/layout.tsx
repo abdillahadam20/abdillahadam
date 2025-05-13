@@ -1,15 +1,19 @@
+import { ThemeProvider } from "@/components/base/Theme-Providers";
+import Footer from "@/components/section/Footer";
+import Header from "@/components/section/Header";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Funnel_Sans } from "next/font/google";
+import React from "react";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const funnelSans = Funnel_Sans({
+  variable: "--font-funnel-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  fallback: ["system-ui", "sans-serif"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -24,10 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={funnelSans.className} suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
