@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 inset-x-0 flex flex-wrap md:justify-between z-50 w-full text-sm py-4">
-      <nav className="mt-4 relative max-w-7xl w-full bg-transparent backdrop-blur-md dark:bg-transparent border border-gray-200 rounded-full mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto  dark:border-neutral-700">
+      <nav className="mt-4 relative max-w-3xl w-full bg-transparent backdrop-blur-md dark:bg-transparent border border-gray-200 rounded-full mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto  dark:border-neutral-700">
         <div className="px-4 md:px-0 flex justify-between items-center w-full">
           <div className="flex items-center">
             <Link

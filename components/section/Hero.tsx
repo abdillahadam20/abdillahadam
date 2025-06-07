@@ -99,7 +99,7 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 0.7 }}
               >
                 <Link
-                  href="https://drive.google.com/file/d/1I8dNmr_sscCOPvdAA28lJZ9zS5VFd_mF/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1WbuzgbuaT2UYnvRBJYGvXgIxrcR53dga/view?usp=sharing"
                   target="_blank"
                 >
                   <Button className="cursor-pointer" variant="emerald">
