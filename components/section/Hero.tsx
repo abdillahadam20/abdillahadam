@@ -10,11 +10,11 @@ import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 
 const Icons = [
-  { icon: <Github />, label: "Github", url: "https://github.com/yourusername" },
+  { icon: <Github />, label: "Github", url: "https://github.com/abdillahadam20" },
   {
     icon: <Linkedin />,
     label: "Linkedin",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/adam-abdillah/",
   },
   {
     icon: <Instagram />,

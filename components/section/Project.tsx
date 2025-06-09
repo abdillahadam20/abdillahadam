@@ -113,7 +113,8 @@ const Project = () => {
               viewport={{ once: false }}
               custom={index}
             >
-              <Card className="max-w-[400px] !py-0">
+              <Link href={project.link} target="_blank">
+                <Card className="max-w-[400px] !py-0">
                 <CardHeader className="!p-0">
                   <Image
                     src={project.image.replace("/public", "")}
@@ -162,6 +163,7 @@ const Project = () => {
                   </div>
                 </CardFooter>
               </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
