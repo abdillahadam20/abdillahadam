@@ -37,9 +37,28 @@ const fadeInUp = {
 
 const projectFreelance = [
   {
+    name: "KonSultanQ",
+    description:
+      "KonSultanQ is a real estate platform designed to simplify property searches in areas like Kota Podomoro Tenjo and Bogor. Built with Nuxt JS, Laravel, and Filament, it offers a modern and user-friendly experience for finding homes and commercial properties.",
+    image: "/public/project/konsultanq.png",
+    stack: [
+      { name: "Nuxt JS", image: "/public/stack/icon-green.png" },
+      {
+        name: "Tailwind CSS",
+        image: "/public/stack/tailwindcss-mark.d52e9897.svg",
+      },
+      { name: "ShadCN UI", image: "/public/stack/shadcn-ui.svg" },
+      { name: "Laravel", image: "/public/stack/Laravel.png" },
+      { name: "MySQL", image: "/public/stack/mysql-logo.png" },
+      { name: "Filament", image: "/public/stack/filament-logo.png" },
+    ],
+    link: "https://konsultanq.com/",
+    bagde: ["Public", "Web App", "Real Estate"],
+  },
+  {
     name: "Magnabasa",
     description:
-      "Magnabasa is a web-based application designed to help users learn reading and writing in the Indonesian language. With its user-friendly interface and a variety of learning features, it supports both self-paced and structured learning experiences. The platform is also integrated with Midtrans payment gateway, allowing users to easily make transactions for premium content and subscription services.",
+      "Magnabasa is a web-based app that helps users learn reading and writing in Indonesian. With a user-friendly interface and various learning features, it supports self-paced and structured learning. Integrated with Midtrans, the platform offers easy access to premium content and subscription services.",
     image: "/public/project/magnabasa.png",
     stack: [
       { name: "Laravel", image: "/public/skills/laravel.png" },
@@ -57,12 +76,12 @@ const projectFreelance = [
       },
     ],
     link: "https://magnabasa.com",
-    bagde: ["Web App", "Integration Payment Gateway"],
+    bagde: ["Public", "Web App", "Integration Payment Gateway"],
   },
   {
-    name: "SIMPUS Helth Care",
+    name: "SIMPUS Health Care",
     description:
-      "SIMPUS Health Care is a web-based information system designed for community health centers (puskesmas) to efficiently manage patient data and health services. The application features a user-friendly interface and supports various modules for administrative and clinical processes. As a front-end developer, I contributed to building responsive and intuitive user interfaces that enhance the overall user experience for health care staff.",
+      "SIMPUS Health Care is a web-based system for community health centers (puskesmas), streamlining patient data and health service management. As a front-end developer, I helped create responsive, user-friendly interfaces to improve staff experience.",
     image: "/public/project/simpus.png",
     stack: [
       { name: "Nuxt JS", image: "/public/skills/nuxt.png" },
@@ -73,12 +92,12 @@ const projectFreelance = [
       { name: "ShadCN UI", image: "/public/skills/shadcn.svg" },
     ],
     link: "",
-    bagde: ["Web App", "System Information Management for Health"],
+    bagde: ["Private", "Web App", "System Information Management for Health"],
   },
   {
     name: "Kota Podomoro Tenjo",
     description:
-      "Kota Podomoro Tenjo is a web-based application developed to manage real estate and housing information for the Kota Podomoro Tenjo residential area located in Tenjo. The platform provides a user-friendly interface and features that support property listing, customer inquiries, and administrative management—enhancing the overall experience for both property developers and prospective buyers.",
+      "Kota Podomoro Tenjo is a web app to manage real estate and housing info for the Kota Podomoro Tenjo area. It offers features for property listings, customer inquiries, and administrative management, making it easier for both developers and buyers.",
     image: "/public/project/kota-podomoro-tenjo.png",
     stack: [
       { name: "Nuxt JS", image: "/public/skills/nuxt.png" },
@@ -92,7 +111,7 @@ const projectFreelance = [
       { name: "Filament", image: "/public/skills/filament.png" },
     ],
     link: "https://kotapodomorotenjo.com",
-    bagde: ["Web App", "Real Estate"],
+    bagde: ["Public", "Web App", "Real Estate"],
   },
   {
     name: "Privy Identitas Digital",
@@ -108,7 +127,7 @@ const projectFreelance = [
       { name: "ShadCN UI", image: "/public/stack/shadcn-ui.svg" },
     ],
     link: "https://privy.id",
-    bagde: ["Web App", "Integration Payment Gateway"],
+    bagde: ["Public", "Web App", "Integration Payment Gateway"],
   },
 ];
 
@@ -150,6 +169,7 @@ const Project = () => {
               viewport={{ once: false }}
               custom={index}
             >
+              <Link href={project.link} target="_blank">
               <Card className="max-w-[400px] !py-0">
                 <CardHeader className="!p-0">
                   <Image
@@ -162,7 +182,7 @@ const Project = () => {
                   />
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <div className="flex md:flex-row flex-col gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {project.bagde.map((badge, i) => (
                       <Badge variant={"emerald"} key={i}>
                         {badge}
@@ -199,6 +219,7 @@ const Project = () => {
                   </div>
                 </CardFooter>
               </Card>
+              </Link>
             </motion.div>
           ))}
         </div>

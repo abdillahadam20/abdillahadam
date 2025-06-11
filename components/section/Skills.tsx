@@ -18,10 +18,10 @@ const skills = [
     name: "TypeScript",
     icon: "/skills/typescript.svg",
   },
-  {
-    name: "Next.js",
-    icon: "/skills/nextjs.svg",
-  },
+  // {
+  //   name: "Next.js",
+  //   icon: "/skills/nextjs.svg",
+  // },
   {
     name: "Tailwind CSS",
     icon: "/skills/tailwindcss.svg",
