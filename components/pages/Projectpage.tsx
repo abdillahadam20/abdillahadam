@@ -37,6 +37,24 @@ const fadeInUp = {
 
 const projectFreelance = [
   {
+    name: "VoteVerse",
+    description:
+      "VoteVerse is a decentralized voting platform that leverages blockchain technology to ensure secure and transparent elections. Built with React.js, Tailwind CSS, Chakra UI, Rust, ICP, and Canister it provides a modern interface for users to participate in various voting.",
+    image: "/public/project/voteverse.png",
+    stack: [
+      { name: "React", image: "/public/skills/react.svg" },
+      {
+        name: "Tailwind CSS",
+        image: "/public/skills/tailwindcss.svg",
+      },
+      { name: "Chakra UI", image: "/public/skills/chakraui.png" },
+      { name: "Rust", image: "/public/skills/rust.jpg" },
+      { name: "Internet Computer", image: "/public/skills/icp.png" },
+    ],
+    link: "https://ijgth-6iaaa-aaaam-ael7a-cai.icp0.io/",
+    bagde: ["Public", "Web3 App", "Decentralized Voting Apps"],
+  },
+  {
     name: "KonSultanQ",
     description:
       "KonSultanQ is a real estate platform designed to simplify property searches in areas like Kota Podomoro Tenjo and Bogor. Built with Nuxt JS, Laravel, and Filament, it offers a modern and user-friendly experience for finding homes and commercial properties.",
@@ -170,55 +188,55 @@ const Project = () => {
               custom={index}
             >
               <Link href={project.link} target="_blank">
-              <Card className="max-w-[400px] !py-0">
-                <CardHeader className="!p-0">
-                  <Image
-                    src={project.image.replace("/public", "")}
-                    alt={project.name}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    className="w-full rounded-t-md object-cover"
-                  />
-                </CardHeader>
-                <CardContent className="flex flex-col gap-2">
-                  <div className="flex flex-wrap gap-2">
-                    {project.bagde.map((badge, i) => (
-                      <Badge variant={"emerald"} key={i}>
-                        {badge}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Link href={project.link} target="_blank">
-                    <CardTitle>{project.name}</CardTitle>
-                  </Link>
-                  <CardDescription className="text-justify">
-                    {project.description}
-                  </CardDescription>
-                </CardContent>
-                <CardFooter className="flex justify-start pb-8">
-                  <div className="flex gap-2 mt-2 flex-wrap">
-                    {project.stack.map((stack, i) => (
-                      <div
-                        key={i}
-                        className="group relative flex items-center gap-2 border rounded-lg p-2 shadow-sm  dark:bg-gray-800"
-                      >
-                        {stack.image && (
-                          <Image
-                            src={stack.image.replace("/public", "")}
-                            alt={stack.name}
-                            width={20}
-                            height={20}
-                          />
-                        )}
-                        <span className="absolute top-full mt-1 left-1/2 -translate-x-1/2 bg-emerald-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
-                          {stack.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </CardFooter>
-              </Card>
+                <Card className="max-w-[400px] !py-0">
+                  <CardHeader className="!p-0">
+                    <Image
+                      src={project.image.replace("/public", "")}
+                      alt={project.name}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full rounded-t-md object-cover"
+                    />
+                  </CardHeader>
+                  <CardContent className="flex flex-col gap-2">
+                    <div className="flex flex-wrap gap-2">
+                      {project.bagde.map((badge, i) => (
+                        <Badge variant={"emerald"} key={i}>
+                          {badge}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Link href={project.link} target="_blank">
+                      <CardTitle>{project.name}</CardTitle>
+                    </Link>
+                    <CardDescription className="text-justify">
+                      {project.description}
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter className="flex justify-start pb-8">
+                    <div className="flex gap-2 mt-2 flex-wrap">
+                      {project.stack.map((stack, i) => (
+                        <div
+                          key={i}
+                          className="group relative flex items-center gap-2 border rounded-lg p-2 shadow-sm  dark:bg-gray-800"
+                        >
+                          {stack.image && (
+                            <Image
+                              src={stack.image.replace("/public", "")}
+                              alt={stack.name}
+                              width={20}
+                              height={20}
+                            />
+                          )}
+                          <span className="absolute top-full mt-1 left-1/2 -translate-x-1/2 bg-emerald-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                            {stack.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardFooter>
+                </Card>
               </Link>
             </motion.div>
           ))}
